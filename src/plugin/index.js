@@ -10,32 +10,34 @@ const createScript = function (src, callBack) {
   document.querySelector('body').appendChild(scriptDom)
 }
 
-const loadMapScript = function (options) {
+const loadMapScript = function (options, callBack) {
   if (!window.AMap) {
     const src = '//webapi.amap.com/maps?v=1.4.15&key=' + options.key
     if (options.loadMapUI && !window.AMapUI) {
       createScript(src, function () {
         const UISrc = '//webapi.amap.com/ui/1.0/main.js'
-        createScript(UISrc)
+        createScript(UISrc, callBack)
       })
     } else {
-      createScript(src)
+      createScript(src, callBack)
     }
   }
 }
 
-map.install = function (Vue, options) {
+map.install = function (Vue, options, callBack) {
   if (map.installed) return
-  loadMapScript(options)
-  const mapFn = vueMap.mapFn
-  const mapUIFn = vueMap.mapUIFn
-  const mapObj = !options.loadMapUI ? { ...mapFn } : { ...mapFn, ...mapUIFn}
-  Vue.prototype.$VMap = mapObj
+  loadMapScript(options, function () {
+    const mapFn = vueMap.mapFn
+    const mapUIFn = vueMap.mapUIFn
+    const mapObj = !options.loadMapUI ? { ...mapFn } : { ...mapFn, ...mapUIFn}
+    Vue.prototype.$VMap = mapObj
+    callBack()
+  })
 }
 
 const install = function (Vue, opts = {}) {
   if (install.installed) return
-  map.install(Vue)
+  map.install(Vue, opts, callBack)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

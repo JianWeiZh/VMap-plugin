@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="45px" height="57px" viewBox="0 0 45 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>定位 (1)</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="代驾服务-轨迹" transform="translate(-157.000000, -631.000000)">
+            <g id="定位-(1)" transform="translate(157.000000, 631.000000)">
+                <ellipse id="Oval" fill="#30303D" cx="22.5" cy="54" rx="9.5" ry="3"></ellipse>
+                <path d="M38.3198429,6.51507385 C29.6330778,-2.17169128 15.3419481,-2.17169128 6.51507385,6.51507385 C-2.17169128,15.201839 -2.17169128,29.4929687 6.51507385,38.3198429 L22.487513,54.1521729 L38.3198429,38.3198429 C47.1467172,29.6330778 47.1467172,15.3419481 38.3198429,6.51507385 Z" id="Shape" fill="#50E3C2" fill-rule="nonzero"></path>
+                <text id="起" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="10" y="30">起</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
