@@ -1,10 +1,10 @@
 {
-  "name": "vmap-simple",
-  "description": "A Vue.js project",
+  "name": "vue-vmap",
+  "description": "A vue plugin for AMap",
   "version": "1.0.0",
   "author": "张健伟 <zjw393854452@163.com>",
   "license": "MIT",
-  "private": true,
+  "main": "dist/VMap.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
