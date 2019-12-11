@@ -68,6 +68,10 @@ const mapFn = {
     const icon = new AMap.Icon(options)
     return icon
   },
+  setLabel: (marker, options) => { // 设置marker标签
+    const label = marker.setLabel(options)
+    return label
+  },
   createPosition: (lng, lat) => { // 创建地图经纬度，用于定位地图Marker
     const pos = new AMap.LngLat(lng, lat)
     return pos

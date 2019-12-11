@@ -12,6 +12,7 @@ export default {
       this.map = this.$VMap.loadMap({
         loadMapDom: 'app',
         mapOptions: {
+          mapStyle: 'amap://styles/6b578d0cafd795bf57fdf5d904b08f9e',
           zoom: 20,
           center: [this.longitude, this.latitude]
         }
@@ -54,7 +55,13 @@ export default {
       this.startMarker = VMap.createMarker({
         position: VMap.createPosition(lng, lat),
         icon: this.newStartIcon(),
-        // offset: VMap.createOffset(-25, -50)
+      })
+      this.setLabel()
+    },
+    setLabel () {
+      this.startMarker.setLabel({
+        offset: this.$VMap.createSize(-50, -45),
+        content: '正在获取您的位置未知未知未知'
       })
     },
     newEndMarker (lng, lat) {
@@ -67,7 +74,9 @@ export default {
     newDriving (startLngLat, endLngLat) { // startLngLat: 起点经纬度【lng, lat】 endLngLat: 终点经纬度【lng, lat】
       this.driving = this.$VMap.initRoutePlan({
         map: this.map,
-        hideMarkers: true
+        hideMarkers: true,
+        isOutline: false,
+        autoFitView: true
       }, 1)
       setTimeout(() => {
         this.driving.search(startLngLat, endLngLat, (status, result) => {
@@ -122,5 +131,15 @@ li {
 
 a {
   color: #42b983;
+}
+.amap-marker-label{
+  line-height: 20px;
+  padding: 0 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: -16px;
+  left: 0;
+  transform: translateX(-40%);
+  border: none;
 }
 </style>
