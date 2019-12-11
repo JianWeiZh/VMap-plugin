@@ -12,7 +12,7 @@ const createScript = function (src, callBack) {
 
 const loadMapScript = function (options, callBack) {
   if (!window.AMap) {
-    const src = '//webapi.amap.com/maps?v=1.4.15&key=' + options.key
+    const src = `//webapi.amap.com/maps?v=${options.version}&key=${options.key}`
     if (options.loadMapUI && !window.AMapUI) {
       createScript(src, function () {
         const UISrc = '//webapi.amap.com/ui/1.0/main.js'
